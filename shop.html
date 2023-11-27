@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shopping Page</title>
+
+    <style>
+       a{
+			text-decoration:none;
+		}
+		.navlink:hover{
+			padding:6px;
+			transition: 0.4s;
+			border:2.5px solid #fff6d5;
+			border-radius: 6px;
+			font-size:18px;
+		}
+		
+		body{
+			background-color: #fff6d5;
+			font-family:sans-serif;
+			font-size: 15px;
+		}
+		.pic{
+			width:30%;
+				height:auto;
+				margin-bottom:0.5rem;
+				margin-left:3rem;
+				border:1px solid black;
+				border-radius: 6px;
+		}
+	
+		.card:hover,
+			.pic:hover {
+				transition: 1.4s;
+				background: #ff8080;
+				border-radius: 20px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Added shadow on hover */
+			}
+
+		.moveToPage {
+			color: black;
+		}
+
+		.moveToPage:hover {
+			color: #fff6d5;
+		}
+
+        /* New styles for the cart section */
+        .cart-container {
+            display: none;
+            position: fixed;
+            top: 5%;
+            right: 0%;
+            width: 300px;
+            padding: 20px;
+            background: #fff6d5;
+            border: 1px solid black;
+            border-radius: 10px;
+            z-index: 999;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ff8080;
+            border-radius: 6px;
+        }
+
+        .cart-item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .cart-total {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .cart-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        .blur {
+            filter: blur(5px);
+        }
+		.close{
+			margin-left:250px;
+			margin-bottom: 5px;
+		}
+    </style>
+</head>
+
+<body>
+
+    <table style="width:100%">
+		<tr>
+				<td colspan="8" align="center">
+					<img src="imgs/cliniclogo.svg" height="150">
+				</td>
+			</tr>
+		
+
+		<tr style="background:#ff8080;">
+			<td align="center" style="padding:10px;"><a href="index.html" class="navlink" style="color:#fff;">Home</a></td>
+			<td align="center" style="padding:10px;"><a href="about.html" class="navlink" style="color:#fff;">About</a></td>
+			<td align="center" style="padding:10px;"><a href="services.html" class="navlink" style="color:#fff;">Services</a></td>
+			<td align="center" style="padding:10px;"><a href="doctors.html" class="navlink" style="color:#fff;">Doctors</a></td>
+			<td align="center" style="padding:10px;"><a href="appointment.html" class="navlink" style="color:#fff;">Appointment</a></td>
+			<td align="center" style="padding:10px;"><a href="contact.html" class="navlink" style="color:#fff;">Contact Us</a></td>
+		</tr>
+		
+		<tr style="background:#ff8080;">
+			<td align="center" colspan="3" style="padding:10px;"><a href="shop.php" class="navlink" style="color:#fff;">Shop</a></td>
+			<td align="center" colspan="3" style="padding:10px;"><a href="talkLogin.php" class="navlink" style="color:#fff;">Private Chat</a></td>
+		</tr>
+        <!-- Your existing table rows -->
+
+        <tr>
+            <td colspan="8" align="center" style="padding:5px 20px;">
+                <h2>Your Cart</h2>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="2" align="center" style="padding:20px;" class="card">
+                <a href="#" class="moveToPage">
+                    <img src="imgs/appointment.jpg" class="pic" style="width:200px; height:200px;">
+                </a>
+                <p>Product 1 Description</p>
+                <h4>$25.00</h4>
+                <button class="add-to-cart-button" onclick="addToCart('Product 1', 25.00, 'imgs/appointment.jpg')">Add to Cart</button>
+            </td>
+
+            <td colspan="2" align="center" style="padding:20px;" class="card">
+                <a href="#" class="moveToPage">
+                    <img src="imgs/drugs.jpg" class="pic" style="width:200px; height:200px;">
+                </a>
+                <p>Product 2 Description</p>
+                <h4>$30.00</h4>
+                <button class="add-to-cart-button" onclick="addToCart('Product 2', 30.00, 'imgs/drugs.jpg')">Add to Cart</button>
+            </td>
+
+            <td colspan="2" align="center" style="padding:20px;" class="card">
+                <a href="#" class="moveToPage">
+                    <img src="imgs/docimg2.jpeg" class="pic" style="width:200px; height:200px;">
+                </a>
+                <p>Product 3 Description</p>
+                <h4>$40.00</h4>
+                <button class="add-to-cart-button" onclick="addToCart('Product 3', 40.00, 'imgs/docimg2.jpeg')">Add to Cart</button>
+            </td>
+        </tr>
+		
+		<tr>
+            <td colspan="2" align="center" style="padding:20px;" class="card">
+                <a href="#" class="moveToPage">
+                    <img src="imgs/docimg1.jpeg" class="pic" style="width:200px; height:200px;">
+                </a>
+                <p>Product 1 Description</p>
+                <h4>$25.00</h4>
+                <button class="add-to-cart-button" onclick="addToCart('Product 1', 25.00, 'imgs/appointment.jpg')">Add to Cart</button>
+            </td>
+
+            <td colspan="2" align="center" style="padding:20px;" class="card">
+                <a href="#" class="moveToPage">
+                    <img src="imgs/docimg3.jpeg" class="pic" style="width:200px; height:200px;">
+                </a>
+                <p>Product 2 Description</p>
+                <h4>$30.00</h4>
+                <button class="add-to-cart-button" onclick="addToCart('Product 2', 30.00, 'imgs/drugs.jpg')">Add to Cart</button>
+            </td>
+
+            <td colspan="2" align="center" style="padding:20px;" class="card">
+                <a href="#" class="moveToPage">
+                    <img src="imgs/docimg4.jpeg" class="pic" style="width:200px; height:200px;">
+                </a>
+                <p>Product 3 Description</p>
+                <h4>$40.00</h4>
+                <button class="add-to-cart-button" onclick="addToCart('Product 3', 40.00, 'imgs/docimg2.jpeg')">Add to Cart</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="8">
+                <div class="cart-container" id="cartContainer">
+				<b><p align="center">Your Cart</p></b>
+				<button id="close-button" class="close" onclick="closeCart()">Close</button>
+                    <!-- Cart items will be dynamically added here using JavaScript -->
+                    <div id="cartContent"></div>
+                    <!-- Display total and checkout button inside the cart container -->
+                    <div class="cart-total" id="cartTotal">
+                        <p>Total: $0.00</p>
+                        <button id="purchase-button" onclick="purchase()">Checkout</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Button to toggle the cart visibility -->
+    <button class="cart-button" id="cartButton" onclick="toggleCart()">View Cart</button>
+
+    <!-- Popup message -->
+    <div class="popup" id="popup">
+        <p>Thank you for your purchase!</p>
+    </div>
+
+	<script src="shop.js"></script>
+</body>
+
+</html>

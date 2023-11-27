@@ -1,0 +1,87 @@
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<title>Shopping Page</title>
+
+		<style>
+		   a{
+				text-decoration:none;
+			}
+			
+			body{
+				background-color: #fff6d5;
+				font-family:sans-serif;
+				font-size: 15px;
+			}
+
+
+
+			#locationButton {
+            padding: 10px;
+            background-color: #ff8080;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+			#map {
+				height: 300px; /* Adjust the height of the map as needed */
+				margin-top: 20px;
+				border-radius: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<table style="width:100%">
+			<tr>
+					<td colspan="8" align="center">
+						<img src="imgs/cliniclogo.svg" height="150">
+					</td>
+			</tr>
+
+			<tr>
+				<td colspan="8" align="center" style="padding:5px 20px;">
+					<h2>Our Location</h2>
+					 <!-- Button to get user's current location -->
+					<button id="locationButton" onclick="getLocation()">Show Location</button>
+
+					<!-- Map display -->
+					<div id="map"></div>
+
+				</td>
+			</tr>
+			
+
+		</table>
+			<script>
+			function getLocation() {
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(showPosition, showError);
+				} else {
+					alert("Geolocation is not supported by this browser.");
+				}
+			}
+
+			function showPosition(position) {
+				// Display the map using Google Maps API
+				var mapDiv = document.getElementById("map");
+
+				const { latitude, longitude } = position.coords;
+				mapDiv.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.587449966828!2d30.656142674151578!3d-0.61637819937759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d91a5316419bb1%3A0xd6bb4d3ef2f5c5ca!2sMbarara%20District%20Regional%20Referral%20Hospital!5e0!3m2!1sen!2sug!4v1701010102311!5m2!1sen!2sug" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+
+			}
+
+			function showError(error) {
+				alert("Error getting your location: " + error.message);
+			}
+    </script>
+
+	</body>
+
+	
+	</html>
+	

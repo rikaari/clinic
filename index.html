@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		
+		<title>Home Page</title>
+		
+	</head>
+	
+	<style>
+		
+		a{
+			text-decoration:none;
+		}
+		.navlink:hover{
+			padding:6px;
+			transition: 0.4s;
+			border:2.5px solid #fff6d5;
+			border-radius: 6px;
+			font-size:18px;
+		}
+		
+		body{
+			background-color: #fff6d5;
+			font-family:sans-serif;
+			font-size: 15px;
+		}
+		.pic{
+			width:30%;
+				height:auto;
+				margin-bottom:0.5rem;
+				margin-left:3rem;
+				border:1px solid black;
+				border-radius: 6px;
+		}
+	
+		.card:hover,
+			.pic:hover {
+				transition: 1.4s;
+				background: #ff8080;
+				border-radius: 20px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Added shadow on hover */
+			}
+
+		.moveToPage {
+			color: black;
+		}
+
+		.moveToPage:hover {
+			color: #fff6d5;
+		}
+		
+	</style>
+
+	<body>
+	
+		<table style="width:100%">
+	
+			<tr>
+				<td colspan="8" align="center">
+					<img src="imgs/cliniclogo.svg" height="150">
+				</td>
+			</tr>
+		
+
+			<tr style="background:#ff8080;">
+				<td align="center" style="padding:10px;"><a href="index.html" class="navlink" style="color:#fff;">Home</a></td>
+				<td align="center" style="padding:10px;"><a href="about.html" class="navlink" style="color:#fff;">About</a></td>
+				<td align="center" style="padding:10px;"><a href="services.html" class="navlink" style="color:#fff;">Services</a></td>
+				<td align="center" style="padding:10px;"><a href="doctors.html" class="navlink" style="color:#fff;">Doctors</a></td>
+				<td align="center" style="padding:10px;"><a href="appointment.html" class="navlink" style="color:#fff;">Appointment</a></td>
+				<td align="center" style="padding:10px;"><a href="contact.html" class="navlink" style="color:#fff;">Contact Us</a></td>
+			</tr>
+			
+			<tr style="background:#ff8080;">
+				<td align="center" colspan="3" style="padding:10px;"><a href="shop.php" class="navlink" style="color:#fff;">Shop</a></td>
+				<td align="center" colspan="3" style="padding:10px;"><a href="talkLogin.php" class="navlink" style="color:#fff;">Private Chat</a></td>
+			</tr>
+			
+
+			<tr>
+				<td colspan="8" align="center" style="padding:5px 20px;"><h1>Our Services</h1></td>
+			</tr>
+						
+			<tr>
+				<td colspan="2" align="center" style="padding:20px;" class="card">
+					<a href="appointment.html" class="moveToPage">
+						<img src="imgs/appointment.jpg" class="pic" style="width:200px; height:200px;">
+					</a>
+					<p>Want To Make Appointments?</p>
+					<a href="appointment.html" class="moveToPage">
+						<h4>Make Appointment</h4>
+					</a>
+					<p>Our doctors are one schedule away</p>
+				</td>
+				
+				<td colspan="2" align="center" style="padding:20px;" class="card">
+					<a href="#" class="moveToPage">
+						<img src="imgs/drugs.jpg" class="pic" style="width:200px; height:200px;">
+					</a>
+					<p>Take a look at our drug shop</p>
+					<a href="#" class="moveToPage">
+						<h4>Drug Shop</h4>
+					</a>
+					<p>We provide drugs to our patients</p>
+				</td>
+				
+				<td colspan="2" align="center" style="padding:20px;" class="card">
+					<a href="talkLogin.php" class="moveToPage">
+						<img src="imgs/consult.jpeg" class="pic" style="width:200px; height:200px;">
+					</a>
+					<p>Have an issue you'd like to consult?</p>
+					<a href="talkLogin.php" class="moveToPage">
+						<h4>Private Consultation</h4>
+					</a>
+					<p>You can converse with our doctors to tell them how you feel.</p>
+				</td>
+			</tr>
+						
+			<tr>
+				<td colspan="8" align="center" style="padding:5px 20px;"><h1>Our Team</h1></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" style="padding:20px;" class="card">
+					<a href="doctors.html" class="moveToPage">
+						<img src="imgs/docimg2.jpeg" class="pic" style="width:200px; height:200px;">
+					</a>
+					<p>Gynacologist</p>
+					<a href="doctors.html" class="moveToPage">
+						<h4>Jane Doe</h4>
+					</a>
+				</td>
+				
+				<td colspan="2" style="padding:20px;" class="card">
+					<a href="doctors.html" class="moveToPage">
+						<img src="imgs/docimg1.jpeg" class="pic" style="width:200px; height:200px;">
+					</a>
+					<p>Gynacologist</p>
+					<a href="doctors.html" class="moveToPage">
+						<h4>John Doe</h4>
+					</a>
+				</td>
+				
+				<td colspan="2" style="padding:20px;" class="card">
+					<a href="doctors.html" class="moveToPage">
+						<img src="imgs/docimg3.jpeg" class="pic" style="width:200px; height:200px;">
+					</a>
+					<p>Gynacologist</p>
+					<a href="doctors.html" class="moveToPage">
+						<h4>Jane Doe</h4>
+					</a>
+				</td>
+			</tr>
+			
+			<tr style="background:#ff8080;">
+				<td colspan="8" align="center" style="padding:10px;">
+					<a href="about.html" class="moveToPage"><p>Visit anytime</p></a>
+				</td>
+			</tr>
+		</table>  
+			
+		
+	</body>
+
+</html>
